@@ -4,6 +4,7 @@ public class Player {
 
     private String name;
     private int counter;
+
     Scanner user_input = new Scanner(System.in);
 
     public void setNameFromInput(){
@@ -11,9 +12,10 @@ public class Player {
         this.name = user_input.next();
     }
 
+    //maybe add a while loop to this method so that it checks for non-numeric inputs?
     public void setCounterFromInput(){
-        System.out.println("How many games do you wish to play "+ name+"?");
-        this.counter = user_input.nextInt();
+            System.out.println("How many games do you wish to play "+ name+"?");
+            this.counter = user_input.nextInt();
     }
 
     public String getName (){

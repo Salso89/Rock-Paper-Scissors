@@ -13,11 +13,11 @@ public class Game {
         boolean availableAnswer = false;
         String[] answers = {"rock", "paper", "scissors"};
         int playerPoints = 0;
-        int computerPoints =0;
+        int computerPoints = 0;
         int numberOfTurns = 0;
 
         do {
-            System.out.println("Please enter your  move... (rock, paper, scissors");
+            System.out.println("Please enter your  move... (rock, paper, scissors)");
             String playerInput = scanner.nextLine();
 
             for (String answer : answers) {
@@ -59,7 +59,7 @@ public class Game {
                 System.out.println("-----------------------");
                 System.out.println(playerPoints + "         |         " + computerPoints);
 
-            }else if (computerAnswer.equalsIgnoreCase("rock") && playerInput.equalsIgnoreCase("scissors")) {
+            } else if (computerAnswer.equalsIgnoreCase("rock") && playerInput.equalsIgnoreCase("scissors")) {
                 numberOfTurns++;
                 computerPoints++;
                 System.out.println(inGamePlayer.getName() + " Wins!");
@@ -83,20 +83,22 @@ public class Game {
                 System.out.println("-----------------------");
                 System.out.println(playerPoints + "         |         " + computerPoints);
 
-            }else {
+            } else {
                 System.out.println("Invalid entry, please try again...");
             }
-        }while(inGamePlayer.getCounter() != numberOfTurns);
+        } while (inGamePlayer.getCounter() != numberOfTurns);
 
-        if (playerPoints > computerPoints){
+        if (playerPoints > computerPoints) {
             System.out.println(inGamePlayer.getName() + " Wins! Well done");
-        } else if (playerPoints < computerPoints) {
+        } else if (playerPoints == computerPoints) {
+            System.out.println("Tie game, everyone's a winner!");
+
+        } else {
             System.out.println("Computer Wins! Better luck next time");
-        }else {
-            System.out.println("The Game is a draw! Everybody Wins!");
         }
 
         System.out.println("Game Over");
+        scanner.close();
     }
 
 
